@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="src/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>BARTHÉLÉMY LE BEL</title>
+</head>
+<body class="bg-custom-mainGrey text-blue-100 font-sans uppercase px-2 xl:px-8">
+  <div id="loader" class="mt-16 text-4xl">0%</div>
+  <div id="content" class="opacity-0">
+    <div class="header flex flex-row w-full justify-between align-top  mt-16">
+      <a onclick="location.reload()" class="left text-4xl xl:text-6xl">Barthélémy</a>
+      <div class="right text-sm xl:text-2xl">freelance developper</div>
+    </div>
+    <div class="hero mt-16 flex flex-row justify-between">
+      <div class="main-infos xl:w-2/3">
+        <h1 class="text-5xl xl:text-8xl">Welcome<br>On my <span class="border-b-4 border-solid border-red-600 text-barre xl:border-b-8 ">portfolio</span></h1>
+        <p class="mt-8 xl:text-2xl">barthélémy is a young developer who's not afraid to learn or take on new challenges.<br>
+        With his fresh eye for current tech trends and his artistic flair, he'll be able to help you with your projects. <br>He'd be happy to talk to you and learn more about you.</p>
+        <div class="contact mt-16 flex flex-col">
+          <h2 class="text-2xl xl:text-4xl"><span class="text-underline">Contact</span></h2>
+          <ul class="ml-24 mt-4 xl:text-2xl xl:ml-48">
+            <li class="hover:text-decoration-thickness-2"><a href="mailto:barthelemylebel@icloud.com" class="hover:after:content-['↗']">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/barth%C3%A9l%C3%A9my-le-bel-517602254/" class="hover:after:content-['↗']">Linkedin</a></li>
+            <li><a href="https://github.com/barthelemy-lebel" class="hover:after:content-['↗']">Github</a></li>
+            <li><a href="https://www.instagram.com/barthos_lbl/git" class="hover:after:content-['↗']">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="clients mt-16 flex flex-col">
+          <h2 class="text-2xl xl:text-4xl"><span class="text-underline">Clients</span></h2>
+          <ul class="ml-24 mt-4 flex flex-row xl:text-2xl xl:ml-48">
+            work in progress...
+          </ul>
+        </div>
+        <div class="footer float-end mt-4 text-xs xl:absolute right-4 bottom-2">made & designed by barthelemy le bel</div>
+      </div>
+      <div class="flex float-right flex-row justify-end items-center hidden">
+        <div class="flex-shrink-0 mr-4" >
+          <a href="#" title="work in progress...">
+            <img class="w-36 h-60vh object-cover shadow-md filter grayscale transition-all duration-300 ease-in-out hover:w-48 hover:filter-none " src="/assets/image1.jpg" alt="Image 1" title="work in progress...">
+          </a>
+        </div>
+        <div class="flex-shrink-0 mr-4" title="work in progress...">
+          <a href="#" title="work in progress...">
+            <img class="w-36 h-60vh object-cover shadow-md filter grayscale transition-all duration-300 ease-in-out hover:w-48 hover:filter-none" src="/assets/image2.jpg" alt="Image 2" title="work in progress...">
+          </a>
+        </div>
+        <div class="flex-shrink-0 mr-4" title="work in progress...">
+          <a href="#" title="work in progress...">
+            <img class="w-36 h-60vh object-cover shadow-md filter grayscale transition-all duration-300 ease-in-out hover:w-48 hover:filter-none" src="/assets/image3.jpg" alt="Image 3" title="work in progress...">
+          </a>
+        </div>
+        <div class="flex-shrink-0 mr-4" title="work in progress...">
+          <a href="#" title="work in progress...">
+            <img class="w-36 h-60vh object-cover shadow-md filter grayscale transition-all duration-300 ease-in-out hover:w-48 hover:filter-none" src="/assets/image4.jpg" alt="Image 4" title="work in progress...">
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        const $content = $('#content')
+        var loader = $('#loader');
+        var count = 0;
+        var increment = 1;
+        var interval = setInterval(function() {
+          count += increment;
+          if (count > 100) {
+            clearInterval(interval);
+            count = 100;
+            $content.removeClass('opacity-0');
+            $content.addClass('content')
+            loader.hide()
+          }
+          loader.text(count + '%');
+        }, 5);
+      })
+    </script>
+</body>
+</html>
